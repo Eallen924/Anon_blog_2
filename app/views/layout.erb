@@ -17,13 +17,26 @@
 
   <title></title>
 </head>
-<body>
-   <div class='header'>
-      <div class='nav'>
-        <div id='nav-title'><a href='/'>Sonic Blog</a></div>
-        
-      </div>
+<header>
+  <div id='nav-title'>
+    <a href='/'>Sonic Blog</a>
   </div>
+  <% if current_user %>
+  <div class="logout">
+  <a href="/logout">logout</a>
+  </div>
+  <% else %>
+  <div class="login">
+  <a href="/create_user">Join</a>
+  <form action="/login" method="post">
+  <input type="text" name="user[email]" placeholder="ie. rachelwarbelow@gmail.com"><br>
+  <input type="password" name="user[password]" placeholder="password"><br>
+  <input type="submit" value="Login">
+</form>
+</div>
+<% end %>
+</header>
+<body>
 
   <%= yield %>
 
