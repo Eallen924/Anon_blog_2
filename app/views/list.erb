@@ -1,0 +1,24 @@
+<% if @posts %>
+  <div>
+    <% @posts.each do |post| %>
+  <div class="container">
+  <h1><a href="view/<%= post.id %>"><%= post.title %></a></h1>
+  <h2>By: <%= post.author %></h2> 
+  <h3>Written on: <%= post.created_at.strftime("%A %B %d, %Y") %></h3>
+  <p><%= post.body %></p>
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+    <% end %>
+  </div>
+<% end %>
