@@ -1,6 +1,5 @@
 get '/create_user' do
-  # Look in app/views/index.erb
-  erb :create_user
+  erb :create_user, layout: !request.xhr?
 end
 
 get '/logout' do
@@ -28,8 +27,8 @@ post '/login' do
   end
 end
 
-get '/user_profile/:user_id' do 
-  @user = User.find(params[:user_id]) 
+get '/user_profile/:user_id' do
+  @user = User.find(params[:user_id])
   if @user.id == current_user.id
     erb :user_profile
   else

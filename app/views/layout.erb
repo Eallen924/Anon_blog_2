@@ -18,25 +18,34 @@
   <title></title>
 </head>
 <header>
-  <div id='nav-title'>
-    <a href='/'>Sonic Blog</a>
-  </div>
+  <a class="nav_title" href='/'>Sonic Blog</a>
   <% if current_user %>
-  <div class="logout">
-  <a href="/logout">logout</a>
-  </div>
+  <a class="logout" href="/logout">logout</a>
   <% else %>
   <div class="login">
-  <a href="/create_user">Join</a>
-  <form action="/login" method="post">
-  <input type="text" name="user[email]" placeholder="ie. rachelwarbelow@gmail.com"><br>
-  <input type="password" name="user[password]" placeholder="password"><br>
-  <input type="submit" value="Login">
-</form>
-</div>
-<% end %>
+    <a id="join" href="/create_user">Join</a>
+    <form class="login" action="/login" method="post">
+      <input type="text" name="user[email]" placeholder="Email">
+      <input type="password" name="user[password]" placeholder="Password">
+      <input  class="button" type="submit" value="Login">
+    </form>
+  </div>
+  <% end %>
 </header>
 <body>
+  <!-- <div id="blanket" class="blanket">
+      <div id="sign_up_container" class="sign_up_container">
+    <h2>Join us.</h2>
+
+    <form action="/create_user" method="post">
+      <input type="text" name="user[name]" placeholder="ie. Rachel Warbelow"><br>
+      <input type="text" name="user[email]" placeholder="ie. rachelwarbelow@gmail.com"><br>
+      <input type="password" name="user[password]" placeholder="password"><br>
+      <input type="submit" value="Create User">
+    </form>
+  </div>
+  </div>
+  </div> -->
 
   <%= yield %>
 

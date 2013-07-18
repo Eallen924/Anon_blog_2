@@ -1,0 +1,11 @@
+<div class="container">
+<% if @error %>
+  <%= @error %>
+<% else %>
+<h1>Congratulations! Here's your information:</h1>
+<p>Full name: <%= current_user.name %></p>
+<p>Email address: <%= current_user.email %></p>
+<% end %>
+</div>
+
+<a class="back_to_the_future" href="/">Back to the future</a>
