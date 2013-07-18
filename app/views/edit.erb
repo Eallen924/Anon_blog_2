@@ -1,5 +1,5 @@
 <div class="container">
-  
+
 
 <form action="/update/<%= @post.id %>" method="post">
   <label for="post_title">Title:</label>
@@ -16,15 +16,18 @@
 </form><br>
 
   <% @post.tags.each do |tag| %>
-  <form action="/removetag/<%= tag.id %>" method="post">
-    <input type="hidden" name="id" value="<%= @post %>">
-    <%= tag.name %><input type="submit" value="Delete">
+  <form action="/remove_tag" method="post">
+    <input type="hidden" name="post_id" value="<%= @post.id %>">
+    <input type="hidden" name="tag_id" value="<%= tag.id %>">
+    <input type="submit" value="<%= tag.name %> X">
   </form>
-  <% end %> 
+  <% end %>
   <!-- <label for="post_tags">Tags:</label>
   <input id="post_tags" name= "post[tags]" placeholder="Enter tags here..." value="<%= @tag_names %>"> -->
 
 <form action="/delete/<%= @post.id %>" method="post">
  <input type="submit" value="Delete Post">
-</form> 
+</form>
+
+<a href="/">I'm Done</a>
 </div>
