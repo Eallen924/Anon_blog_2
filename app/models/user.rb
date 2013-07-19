@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates :email, :presence => true
   validates :password_hash , :presence => true
   validate :email_valid?
+  has_many :posts
   has_many :favorite_websites
   has_many :urls, :through => :favorite_websites
 

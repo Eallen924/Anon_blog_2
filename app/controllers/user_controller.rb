@@ -20,6 +20,8 @@ post '/user/create' do
 end
 
 post '/user/update' do
+  puts "REFERRER ZOMG!"
+  p request.referrer
   current_user.update(params[:user])
   redirect to "/user/profile/#{current_user.id}"
 end
@@ -58,4 +60,15 @@ get '/user/edit/:user_id' do
     @error = "Page not found... Your mom."
     erb :user_profile
   end
+end
+
+get '/user/posts/:user_id' do
+  user = User.find(params[:user_id])
+  p user
+  @posts = user.posts
+  p @posts
+  if @posts == nil
+    @error = "This user does not have any posts"
+  end
+  erb :user_posts
 end

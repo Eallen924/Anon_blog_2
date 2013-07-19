@@ -1,4 +1,5 @@
 <div class="container">
+  <div class="post_wrapper">
    <h1><%= @post.title %></h1>
   <h2>By: <%= @post.author %></h2>
   <h3>Written on: <%= @post.created_at.strftime("%A %B %d, %Y") %></h3>
@@ -8,5 +9,6 @@
     <li><%= tag.name.strip %></li>
   <% end %>
   </ul>
-  <a href="/edit/<%= @post.id %>">Edit</a>
+</div>
+  <a href="/post/edit/<%= @post.id %>">Edit</a>
 </div>

@@ -3,11 +3,11 @@
   <%= @error %>
 <% else %>
 <h1><%=current_user.name%></h1>
-<img src="http://www.gravatar.com/avatar/b23de1730d87b48b885501465cffa61c.png" alt="">
+<img src="http://www.maxdenver.com/maxdenver/images/100807/tebow_hair_425.jpg" alt="">
 <ul>
 <li><a href="/user/edit/<%= current_user.id %>">Edit Profile</a> </li>
-<li><a href="">New Blog Entry</a></li>
-<li><a href="">Blog Archive</a></li>
+<li><a href="/post/create">New Blog Entry</a></li>
+<li><a href="/user/posts/<%= current_user.id %>">Blog Archive</a></li>
 <li><a class="back_to_the_future" href="/">Back to the future</a></li>
 </ul>
 <% end %>
