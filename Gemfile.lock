@@ -28,6 +28,7 @@ GEM
     eventmachine (1.0.3)
     faker (1.1.2)
       i18n (~> 0.5)
+    gravatar-ultimate (1.0.3)
     i18n (0.6.4)
     method_source (0.8.1)
     minitest (4.7.5)
@@ -83,6 +84,7 @@ DEPENDENCIES
   awesome_print
   bcrypt-ruby
   faker
+  gravatar-ultimate
   pg
   pry
   rake

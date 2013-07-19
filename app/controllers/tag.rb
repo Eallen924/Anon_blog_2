@@ -4,8 +4,3 @@ get "/tag/:tag_name" do
   erb :list
 end
 
-
-# <% if @posts.any? %>
-# <% @posts.each do |post| %>
-#   <div id=""><%= post %> </div>
-#   <% end %>

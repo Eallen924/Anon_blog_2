@@ -1,0 +1,33 @@
+<div class="container">
+
+
+<form action="/update/<%= @post.id %>" method="post">
+  <label for="post_title">Title:</label>
+  <input id="post_title" name="post[title]" placeholder="Title" value="<%= @post.title%>"><br>
+  <br>
+
+  <label for="post_author">Author:</label>
+  <input id="post_author" name= "post[author]" value="<%= @post.author %>"><br>
+  <br>
+
+  <label for="post_body">Body:</label>
+  <textarea id="post_body" rows=5 col= 10 name= "post[body]" placeholder="Enter text here..."><%= @post.body %></textarea><br>
+  <input type="submit" value="Submit"><br>
+</form><br>
+
+  <% @post.tags.each do |tag| %>
+  <form action="/remove_tag" method="post">
+    <input type="hidden" name="post_id" value="<%= @post.id %>">
+    <input type="hidden" name="tag_id" value="<%= tag.id %>">
+    <input type="submit" value="<%= tag.name %> X">
+  </form>
+  <% end %>
+  <!-- <label for="post_tags">Tags:</label>
+  <input id="post_tags" name= "post[tags]" placeholder="Enter tags here..." value="<%= @tag_names %>"> -->
+
+<form action="/delete/<%= @post.id %>" method="post">
+ <input type="submit" value="Delete Post">
+</form>
+
+<a href="/">I'm Done</a>
+</div>

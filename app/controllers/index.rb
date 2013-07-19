@@ -3,10 +3,7 @@ get '/' do
   redirect'/list'
 end
 
-get '/new' do
-  @post = Post.new
-  erb :edit
-end
+
 
 get '/edit/:id' do
   @post = Post.find(params[:id])
@@ -21,7 +18,7 @@ post '/delete/:id' do
 end
 
 get '/list' do
-  @posts = Post.first(10)
+  @posts = Post.first(3)
   erb :list
 end
 
@@ -45,8 +42,3 @@ post '/remove_tag' do
   redirect "edit/#{params[:post_id]}"
 end
 
-# post '/delete_fav' do
-#   sad_url = FavoriteWebsite.where("user_id = ? AND url_id = ?", current_user.id, params[:sadurl_id])
-#   FavoriteWebsite.find(sad_url.first.id).destroy
-#   redirect "/user_profile/#{current_user.id}"
-# end

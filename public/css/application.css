@@ -2,7 +2,7 @@
   background-color: #D1D1D1;
   width: 400px;
   border-radius: 10px;
-  margin: 20px auto;
+  margin: 10% auto;
   padding: 20px;
   text-align: center;
   box-shadow: rgba(0,0,0,0.4) 0px 7px 10px, inset rgba(0,0,0,0.4) 0px -2px 2px;
@@ -32,7 +32,6 @@
   text-align: center;
   width: 400px;
   z-index: 9002;
-  
 }
 .sign_up_container h2 {
   color:white;
@@ -41,6 +40,9 @@
 /*header style */
 
 header{
+  top:0px;
+  position: fixed;
+  width: 100%;
   overflow: hidden;
   background-color: #3498db;
 }
@@ -48,6 +50,10 @@ header{
 a.nav_title {
   display: inline-block;
   float:left; 
+}
+
+div.post_wrapper {
+  margin-top: 100px;
 }
 
 div.login {
@@ -69,7 +75,7 @@ input, textarea {
   font-family: Helvetica, Arial, sans-serif;
   background-color: white;
   color: #444;
-  margin-bottom: 7px;  
+  margin-bottom: 7px;
 }
 .login input {
   border:0;
@@ -117,7 +123,7 @@ a.back_to_the_future {
 }
 
 .container h1{
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .container h2 {
@@ -138,6 +144,12 @@ a{
   padding:15px;
   text-decoration: none;
   color: white;
+}
+
+img {
+  border-radius: 500px;
+  box-shadow: rgba(0,0,0,0.4) 0px 7px 10px, inset rgba(0,0,0,0.4) 0px -2px 2px;
+  margin-bottom:10px;
 }
 
 ul {

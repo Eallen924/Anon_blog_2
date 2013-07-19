@@ -20,10 +20,11 @@
 <header>
   <a class="nav_title" href='/'>Sonic Blog</a>
   <% if current_user %>
-  <a class="logout" href="/logout">logout</a>
+  <a class="logout" href="/logout">Logout</a>
+  <a class="logout" href="/user/profile/<%= current_user.id %>">My Profile</a>
   <% else %>
   <div class="login">
-    <a id="join" href="/create_user">Join</a>
+    <a id="join" href="/user/create">Join</a>
     <form class="login" action="/login" method="post">
       <input type="text" name="user[email]" placeholder="Email">
       <input type="password" name="user[password]" placeholder="Password">
@@ -37,7 +38,7 @@
       <div id="sign_up_container" class="sign_up_container">
     <h2>Join us.</h2>
 
-    <form action="/create_user" method="post">
+    <form action="/user/create" method="post">
       <input type="text" name="user[name]" placeholder="ie. Rachel Warbelow"><br>
       <input type="text" name="user[email]" placeholder="ie. rachelwarbelow@gmail.com"><br>
       <input type="password" name="user[password]" placeholder="password"><br>

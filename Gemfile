@@ -19,6 +19,8 @@ gem 'shotgun'
 gem 'awesome_print'
 gem 'bcrypt-ruby'
 
+gem 'gravatar-ultimate'
+
 group :test do
   gem 'faker'
   gem 'rspec'
