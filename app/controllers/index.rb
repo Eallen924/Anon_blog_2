@@ -1,6 +1,6 @@
 get '/' do
-  # Look in app/views/index.erb
-  redirect'/list'
+  @posts = Post.all
+  erb :home
 end
 
 get '/edit/:id' do
@@ -8,10 +8,6 @@ get '/edit/:id' do
   erb :edit_post
 end
 
-get '/list' do
-  @posts = Post.all
-  erb :list
-end
 
 get '/view/:id' do
   @post = Post.find(params[:id])

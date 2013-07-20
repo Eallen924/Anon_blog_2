@@ -31,5 +31,5 @@ end
 
 post '/post/delete/:id' do
   Post.find(params[:id]).delete
-  redirect '/list'
+  redirect '/'
 end
